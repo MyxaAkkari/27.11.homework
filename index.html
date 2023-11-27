@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="assets/loading.gif" alt="Loading..." width="150" height="150">
+    </div>
+
+
+    <div id="main-content">
+
+        <h1>Welcome to the Riders site!</h1>
+        <h2>Next trip will be next sunday</h2>
+        <h3 id="listOfPeople"></h3>
+        <input id="username" type="text">
+        <button id="imIn" onclick="addRider()">Im in</button>
+        <button id="imOut" onclick="removeRider()">Never mind</button>
+        <div class="alert" id="alert"></div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
