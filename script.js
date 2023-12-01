@@ -99,45 +99,59 @@ function tenDigitRandomArray() {
 
 // func that takes a list and a num, checks if num in list, returns true/false
 // its needed for the lotary func
-function findNum(list, x) {
-    for (let index = 0; index < list.length; index++) {
-        if (list[index] == x) {
-            return true
+// function findNum(list, x) {
+//     for (let index = 0; index < list.length; index++) {
+//         if (list[index] == x) {
+//             return true
 
-        }
+//         }
 
-    }
-    return false
-}
+//     }
+//     return false
+// }
 
-// func that returns a list of 7 numbers from 1-36, no repeated nums
-function lotaryNum() {
+// // func that returns a list of 7 numbers from 1-36, no repeated nums
+// function lotaryNum() {
+//     let lotary = []
+//     let randomNum = 0
+//     // boolian to check if list got to 7 nums -> stop loop
+//     let genrate = true
+//     while (genrate) {
+//         // assign random num from 1 to 36 to randomNum var
+//         randomNum = Math.floor(Math.random() * 36) + 1
+//         // check if lotary array got to 7 nums
+//         if (lotary.length < 7) {
+//             // check if num is already in list
+//             if (!findNum(lotary, randomNum)) {
+//                 lotary.push(randomNum)
+
+//             } else {
+//                 // if yes break loop and start again
+//                 break
+//             }
+//         }else{
+//             // if list is full stop loop
+//             genrate = false
+//         }
+//     }
+//     return lotary
+// }
+
+// lotary version 2
+function lotary() {
     let lotary = []
-    let randomNum = 0
-    // boolian to check if list got to 7 nums -> stop loop
-    let genrate = true
-    while (genrate) {
-        // assign random num from 1 to 36 to randomNum var
-        randomNum = Math.floor(Math.random() * 36) + 1
-        // check if lotary array got to 7 nums
-        if (lotary.length < 7) {
-            // check if num is already in list
-            if (!findNum(lotary, randomNum)) {
-                lotary.push(randomNum)
-
-            } else {
-                // if yes break loop and start again
-                break
-            }
+    for (let i = 0; i < 7; i++) {
+        let randomNum = Math.floor(Math.random() * 36) + 1
+        if(!lotary.includes(randomNum)){
+            lotary.push(randomNum)
         }else{
-            // if list is full stop loop
-            genrate = false
+            i--
         }
+        
     }
     return lotary
+    
 }
-
-
 
 // show the sum of even numbers in numbers 
 console.log(sumEvenNumbers(numbers));
@@ -155,7 +169,7 @@ lastNumInArray(numbers)
 console.log(tenDigitRandomArray());
 
 // genrate lotary nums
-console.log(lotaryNum());
+console.log(lotary());
 
 
 
